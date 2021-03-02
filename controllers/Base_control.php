@@ -2,7 +2,7 @@
 
 require_once dirname(__DIR__).'/Membership_controller.php';
 
-abstract class Base_controller
+abstract class Base_controll
 {
 	public function __construct()
 	{

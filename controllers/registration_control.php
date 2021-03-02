@@ -1,9 +1,9 @@
 <?php
 
 require_once 'Membership_controller.php';
-require_once 'base_controller.php';
+require_once 'Base_control.php';
 
-class Registration_control extends Base_controller
+class Registration_control extends Base_control
 {
 	public function __construct()
 	{
@@ -83,6 +83,5 @@ class Registration_control extends Base_controller
 	
 }
 
-return new Registration_control();
 
 ?>

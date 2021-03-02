@@ -1,10 +1,10 @@
 <?php
 
-require_once 'base_controller.php';
+require_once 'Base_control.php';
 require_once dirname(__DIR__).'/Db_wrapper.php';
 require_once __DIR__.'/elems/Card.php';
 
-class Main_control extends Base_controller
+class Main_control extends Base_control
 {
 	public function __construct()
 	{
@@ -57,6 +57,5 @@ class Main_control extends Base_controller
 	}
 }
 
-return new Main_control();
 
 ?>

@@ -13,13 +13,13 @@
   <body>
   
   <!-- body -->
-  
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
   <a class="navbar-brand" href="#">Navbar</a>
 
 <form class="container-fluid justify-content-start">
 
-    <button formmethod="GET" formaction="<?= NEWTAB ?>" class="btn  btn-primary <?php if(!isset($_SESSION['logged'])){ echo 'disabled';} ?>" style="margin-right: 20px;" type="button">New Card</button>
+    <button type="submit"   formmethod="POST" formaction="<?= NEWTAB ?>" class="btn  btn-primary <?= !isset($_SESSION['logged']) ? 'disabled': "" ; ?>" style="margin-right: 20px;" type="button">New Card</button>
     <button class="btn  btn-secondary btn-sm align-middle  <?php if(!isset($_SESSION['logged'])){ echo 'disabled';} ?>" type="button">Remove Card</button>
  
   </form>
@@ -34,7 +34,7 @@
 
     <form class="form-inline my-2 my-lg-0">
 	
-      <button class="btn btn-outline-success my-2 my-sm-0" formaction="<?php echo isset($_SESSION['logged']) ?  LOGOUT :  LOGIN; ?>"formmethod="POST" name='from_main' type="submit"><?php if(isset($_SESSION['logged'])){ echo 'Выйти';} else { echo 'Войти';}?></button>            
+      <button class="btn btn-outline-success my-2 my-sm-0" formaction="<?php echo isset($_SESSION['logged']) ?  LOGOUT :  LOGIN; ?>"formmethod="POST" name='from_main' type="submit"><?php  echo (isset($_SESSION['logged'])) ? 'Выйти' : 'Войти'; ?></button>            
     </form>
   </div>
 </nav>
@@ -60,10 +60,11 @@
          <div class="col-sm-6">
            <div class="card">
              <div class="card-body">
-               <h5 class="card-title"> <?php echo $card->title;  ?> </h5>
-               <p class="card-text"> <?php echo $card->text;   ?></p>
-               <h5>creator: <?php echo $card->creator; ?> </h4>
-               <a href="<?php echo $card->link;   ?>">
+               <h2> <?php echo htmlspecialchars(strtoupper( $card->title )); ?>   </h2> 
+               <p class="card-text"> <?php echo strtoupper($card->text);   ?></p>
+               <p>creator: <?php echo $card->creator; ?> </p>
+               <span>link -> <a href="<?= $card->link; ?>"> <?= $card->link; ?> </a> </span> 
+               <a href="<?php echo $card->link;   ?>"> <br> <br>
                  <button class="btn  btn-primary" style="margin-right: 20px;" type="button">Open</button>
                </a>
                
@@ -75,6 +76,7 @@
     $c++;
   }
 
+  //TODO MAKE BUTTONS TO THE LINKS <a>
 ?>
 
 </div>

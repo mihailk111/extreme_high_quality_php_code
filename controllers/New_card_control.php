@@ -1,9 +1,9 @@
 <?php
 
-require_once 'base_controller.php';
+require_once 'Base_control.php';
 require_once dirname(__DIR__).'/Db_wrapper.php';
 
-class New_card_control extends Base_controller
+class New_card_control extends Base_control
 {
 	public function __construct()
 	{
@@ -31,6 +31,5 @@ class New_card_control extends Base_controller
 	}
 }
 
-return new New_card_control();
 
 ?>

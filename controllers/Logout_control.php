@@ -1,8 +1,8 @@
 <?php
 
-require_once 'base_controller.php';
+require_once 'Base_controll.php';
 
-class Main_control extends Base_controller
+class Logout_control extends Base_control
 {
 	public function __construct()
 	{
@@ -34,6 +34,6 @@ class Main_control extends Base_controller
 	}
 }
 
-return new Main_control();
+
 
 ?>
